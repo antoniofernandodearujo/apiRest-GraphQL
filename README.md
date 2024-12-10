@@ -1,81 +1,116 @@
-# Turborepo starter
+## 🌐 API Rest & GraphQL - Projeto de Estudo 🚀
 
-This is an official starter Turborepo.
+### 📝 Descrição
+Este é um pequeno projeto de estudo que implementa uma API Rest e GraphQL para demonstrar as diferenças entre essas abordagens. Embora neste caso as diferenças não sejam tão aparentes, o objetivo é ilustrar conceitos que podem ser úteis em projetos maiores. 🌟
 
-## Using this example
+O repositório inclui um backend com Node.js e TypeScript e um frontend mobile com Expo e React Native.
 
-Run the following command:
+### ✨ Objetivos
+1- Entender as diferenças entre API Rest e GraphQL.
+2- Demonstrar uma implementação simples de ambas as abordagens.
+3- Criar uma base para projetos futuros onde essas diferenças fazem sentido em escala maior.
+### 🛠️ Tecnologias Utilizadas
 
-```sh
-npx create-turbo@latest
+#### Backend
+- Node.js 🌐
+- Express 🚀
+- Apollo Server 🛰️
+- TypeScript 🔷
+
+#### Frontend
+- React Native 📱
+- Expo ⚡
+- TypeScript 🔷
+
+#### Outras ferramentas
+- Turbo Repo 🏎️ (Monorepo Management)
+
+### 🚀 Como rodar o projeto
+#### Pré-requisitos
+- Node.js >= 16.x
+- Expo CLI
+- Yarn ou npm
+
+- Turbo Repo instalado globalmente:
+```bash
+npm install turbo -g
 ```
 
-## What's inside?
+- Clone o repositório:
 
-This Turborepo includes the following packages/apps:
-
-### Apps and Packages
-
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@repo/ui`: a stub React component library shared by both `web` and `docs` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
-
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
-
-### Utilities
-
-This Turborepo has some additional tools already setup for you:
-
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
-
-### Build
-
-To build all apps and packages, run the following command:
-
-```
-cd my-turborepo
-pnpm build
+```bash
+git clone https://github.com/antoniofernandodearujo/apiRest-GraphQL.git
+cd apiRest-GraphQL
 ```
 
-### Develop
+- Instale as dependências:
 
-To develop all apps and packages, run the following command:
-
-```
-cd my-turborepo
-pnpm dev
+```bash
+yarn install
 ```
 
-### Remote Caching
+- Inicie o ambiente de desenvolvimento:
 
-Turborepo can use a technique known as [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
-
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup), then enter the following commands:
-
-```
-cd my-turborepo
-npx turbo login
+```bash
+npx turbo dev
 ```
 
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
+#### Acesse as interfaces:
 
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
+- Backend (API Rest e GraphQL):
+- API Rest: http://localhost:4000/rest/todos
+- GraphQL Playground: http://localhost:4000/graphql
+- Frontend Mobile (Expo):
+- Siga as instruções no terminal para abrir no seu dispositivo ou emulador.
 
-```
-npx turbo link
-```
+### 🧑‍💻 Funcionalidades
+#### API Rest
+- GET /rest/todos - Lista todas as tarefas.
+- POST /rest/todos - Adiciona uma nova tarefa.
+- PUT /rest/todos/:id - Atualiza o status de uma tarefa.
+- DELETE /rest/todos/:id - Remove uma tarefa.
+  
+#### GraphQL
+- Query todos - Retorna todas as tarefas.
+- Mutation addTodo - Adiciona uma nova tarefa.
+- Mutation updateTodoStatus - Atualiza o status de uma tarefa.
+- Mutation deleteTodo - Remove uma tarefa.
 
-## Useful Links
+### 🌟 Diferenças entre API Rest e GraphQL
 
-Learn more about the power of Turborepo:
+  <table style="width: 100%; border-collapse: collapse; margin-top: 20px; background-color: #ffffff;">
+    <thead>
+      <tr style="background-color: #0073e6; color: white;">
+        <th style="padding: 15px; border: 1px solid #ddd;">Aspecto</th>
+        <th style="padding: 15px; border: 1px solid #ddd;">API Rest 🌐</th>
+        <th style="padding: 15px; border: 1px solid #ddd;">GraphQL 🛰️</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="text-align: center;">
+        <td style="padding: 15px; border: 1px solid #ddd;">Estrutura de Dados</td>
+        <td style="padding: 15px; border: 1px solid #ddd;">Endpoint fixo para cada recurso</td>
+        <td style="padding: 15px; border: 1px solid #ddd;">Consulta customizável</td>
+      </tr>
+      <tr style="text-align: center; background-color: #f9f9f9;">
+        <td style="padding: 15px; border: 1px solid #ddd;">Overfetching/Underfetching</td>
+        <td style="padding: 15px; border: 1px solid #ddd;">Pode trazer dados desnecessários ou insuficientes</td>
+        <td style="padding: 15px; border: 1px solid #ddd;">Traz exatamente o que você pede</td>
+      </tr>
+      <tr style="text-align: center;">
+        <td style="padding: 15px; border: 1px solid #ddd;">Flexibilidade</td>
+        <td style="padding: 15px; border: 1px solid #ddd;">Limitada</td>
+        <td style="padding: 15px; border: 1px solid #ddd;">Alta</td>
+      </tr>
+      <tr style="text-align: center; background-color: #f9f9f9;">
+        <td style="padding: 15px; border: 1px solid #ddd;">Quando usar?</td>
+        <td style="padding: 15px; border: 1px solid #ddd;">Sistemas simples e bem definidos</td>
+        <td style="padding: 15px; border: 1px solid #ddd;">Apps complexos com muitos relacionamentos</td>
+      </tr>
+    </tbody>
+  </table>
 
-- [Tasks](https://turbo.build/repo/docs/core-concepts/monorepos/running-tasks)
-- [Caching](https://turbo.build/repo/docs/core-concepts/caching)
-- [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching)
-- [Filtering](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
-- [Configuration Options](https://turbo.build/repo/docs/reference/configuration)
-- [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
+### 📌 Próximos Passos
+- 🔧 Criar um projeto maior onde a diferença entre REST e GraphQL seja essencial.
+- 📱 Adicionar mais funcionalidades no frontend mobile.
+- 🔄 Integrar com um banco de dados para persistência.
